@@ -4,8 +4,6 @@
 [ext_resource path="res://scripts/Cable.gd" type="Script" id=3]
 [ext_resource path="res://scenes/prefabs/Plug.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CubeMesh" id=1]
-size = Vector3( 0.25, 0.25, 0.25 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -14,15 +12,12 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="Camera" type="Camera" parent="DirectionalLight"]
-transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -1.16298, -3.99141 )
-
 [node name="CSGBox" type="CSGBox" parent="."]
 depth = 0.603269
 
 [node name="FloppyCable" type="FloppyCable" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01159, 0.623418, 0.358488 )
-end_location = Vector3( 0, -2.10976, 0 )
+end_location = Vector3( 0, -1.10976, 0 )
 stiffness_coefficient = 0.0
 cable_length = 2.0
 cable_width = 0.05
@@ -41,3 +36,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51159, 0.768111, 0.299906 )
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="WireSystem" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.639326, 1.88502 )
