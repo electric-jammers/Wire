@@ -28,12 +28,6 @@ func _process(delta: float):
 	else:
 		set_end_attached(false)
 		_second_plug.global_transform.origin = to_global(get_end_location())
-	
-	
-func _unhandled_input(event: InputEvent):
-	if event is InputEventMouseMotion:
-		_first_plug.move_and_collide(Vector3(event.relative.x, -event.relative.y, 0) * 0.005)
-		
 
 func _bind(first_plug: Plug, second_plug: Plug):
 	_first_plug = first_plug
