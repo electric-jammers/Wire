@@ -1,20 +1,37 @@
 extends Spatial
 
 var sockets: = Array()
-var wires: = Array()
+var cables: = Array()
 
 var level_index := 0
+var level: Node = null
+
+onready var sockets_root = $Sockets
+onready var cables_root = $Cables
 
 func _ready() -> void:
+	sockets = sockets_root.get_children()
+	cables = cables_root.get_children()
+	
 	_load_level(Levels.get_level_path(level_index))
 
+
 func _load_level(path : String):
-	var level = load(path).instance()
-	var level_setup = level.create_level_setup()
+	var new_level: = load(path).instance() as LevelBase
+	var level_setup: = new_level.create_level_setup()
 	
-	# Place setup logic here
-	#
-	####
+	_setup_level(level_setup)
 	
-	add_child(level)
+	if level:
+		level.queue_free()
+		remove_child(level)
+	level = new_level
+	add_child(new_level)
 	
+	
+func _setup_level(level_setup : LevelSetup) -> void:
+	for i in range(level_setup.MAX_SOCKETS):
+		sockets[i].visible = level_setup.sockets[i]
+		
+	for i in range(level_setup.MAX_CABLES):
+		cables[i].visible = level_setup.cables[i]
