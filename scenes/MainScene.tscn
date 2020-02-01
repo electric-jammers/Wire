@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://materials/BlinkingLight.tres" type="Material" id=2]
+[ext_resource path="res://scenes/MainScene.gd" type="Script" id=3]
 [ext_resource path="res://scripts/WireSystem.gd" type="Script" id=5]
 
 [sub_resource type="CubeMesh" id=1]
@@ -39,6 +40,7 @@ shader_param/flash_speed = 10.0
 shader_param/glow_amount = 5.0
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4.28403, 3.88502 )
@@ -77,3 +79,4 @@ material/0 = SubResource( 4 )
 
 [node name="FloppyCable" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.138559 )
+stiffness_coefficient = 2.0
