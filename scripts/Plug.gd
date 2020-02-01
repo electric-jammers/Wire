@@ -1,4 +1,4 @@
-extends MeshInstance
+extends Spatial
 class_name Plug
 
 # Private state
@@ -16,6 +16,9 @@ func set_attached(attached: bool):
 	_attached = attached
 
 	pass
+
+func get_collision_shape() -> CollisionShape:
+	return $CollisionShape as CollisionShape
 
 func is_attached() -> bool:
 	return _attached
