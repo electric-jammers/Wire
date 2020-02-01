@@ -16,7 +16,7 @@ func set_attached(attached: bool):
 	_attached = attached
 
 	if cable_ref:
-		var cable: Cable = cable_ref.get_ref()
+		var cable: FloppyCable = cable_ref.get_ref() 
 		if cable:
 			if is_end:
 				cable.is_end_attached = attached
