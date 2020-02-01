@@ -22,3 +22,17 @@ func get_collision_shape() -> CollisionShape:
 
 func is_attached() -> bool:
 	return _attached
+
+func set_position(new_pos: Vector3):
+	translation = new_pos
+
+func query(plug_query: Vector2) -> Vector3:
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
+	if result:
+		print("Hit!" + result.position)
+		return result.position
+	return Vector3.INF
+
+
+
