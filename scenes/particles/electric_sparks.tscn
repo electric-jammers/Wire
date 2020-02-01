@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://textures/particles/star_09.png" type="Texture" id=1]
+[ext_resource path="res://textures/particles/spark_02.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+flags_vertex_lighting = true
+flags_world_triplanar = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 1.04926, 0, 1, Vector2( 0.0638978, 0.0670455 ), 1.04926, -1.10449, 1, 1, Vector2( 0.124601, 0 ), -1.10449, 0.0, 1, 1, Vector2( 0.440895, 0 ), 0.0, 6.28371, 1, 1, Vector2( 0.507987, 0.421591 ), 6.28371, -3.77023, 1, 1, Vector2( 0.619808, 0 ), -3.77023, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.207668, 0.4625 ), 2.22712, 0.0917888, 1, 0, Vector2( 0.322684, 0 ), -4.9421, 1.77841, 0, 1, Vector2( 0.460064, 0.244318 ), 1.77841, 0.0, 1, 0, Vector2( 0.591054, 0 ), -1.86516, 0.67843, 1, 1, Vector2( 0.763578, 0.117045 ), 0.67843, -0.49507, 1, 1, Vector2( 1, 0 ), -0.49507, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 0.34
+spread = 90.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.25
+angular_velocity = 8.0
+angular_velocity_random = 0.27
+linear_accel = -0.5
+angle = 52.7
+angle_random = 1.0
+scale = 0.8
+scale_curve = SubResource( 5 )
+color = Color( 0.537255, 0.796078, 1, 1 )
+hue_variation_curve = SubResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+flags_unshaded = true
+flags_vertex_lighting = true
+flags_world_triplanar = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+lifetime_randomness = 0.34
+spread = 90.0
+gravity = Vector3( 0, -2, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.25
+angular_velocity = 8.0
+angular_velocity_random = 0.27
+linear_accel = -0.5
+angle_random = 1.0
+scale = 0.5
+scale_curve = SubResource( 5 )
+color = Color( 1, 0.92549, 0.572549, 1 )
+hue_variation_random = 0.04
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+material_override = SubResource( 1 )
+speed_scale = 2.25
+explosiveness = 0.9
+randomness = 0.12
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="Particles_falling" type="Particles" parent="."]
+material_override = SubResource( 8 )
+amount = 30
+speed_scale = 1.5
+explosiveness = 0.9
+randomness = 0.12
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 7 )
