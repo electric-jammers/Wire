@@ -26,13 +26,18 @@ func is_attached() -> bool:
 func set_position(new_pos: Vector3):
 	translation = new_pos
 
-func query(plug_query: Vector2) -> Vector3:
-	var space_state = get_world().direct_space_state
-	var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
-	if result:
-		print("Hit!" + result.position)
-		return result.position
+func query(ray_start: Vector3, ray_dir: Vector3) -> Vector3:
+	var ray_end = ray_start + ray_dir * 1000.0
+
+	var space_state = get_world().get_direct_space_state()
+	var hit = space_state.intersect_ray(ray_start, ray_end)
+	if hit.size() != 0:
+		print("Hit!" + str(hit.position))
+		return hit.position
+		
 	return Vector3.INF
+
+
 
 
 
