@@ -10,7 +10,7 @@ var plug_query_dir = null
 var board_size: Vector2
 var plug_mouse_offset := Vector3.ZERO
 
-var hover_threshold = 0.1
+var hover_threshold = 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,13 +50,19 @@ func _process(delta):
 			selected_plug = null
 	
 	if selected_plug != null:
+		if hovered_socket != null:
+			hovered_socket.set_hovered(false)
+			hovered_socket = null
 		var new_plug_pos = project_mouse_ray_onto_plane()
 		if new_plug_pos != null:
 			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, selected_plug.get_position().z) + plug_mouse_offset)
 			for socket in all_sockets:
-				if socket.translation.distance_to(selected_plug.get_position()) < hover_threshold:
+				print(socket.global_transform.origin.distance_to(selected_plug.get_position()))
+				if socket.global_transform.origin.distance_to(selected_plug.get_position()) < hover_threshold:
 					hovered_socket = socket
+					hovered_socket.set_hovered(true)
 					break
+			print()
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -70,6 +76,7 @@ func _physics_process(delta):
 			if new_plug_pos != Vector3.INF:
 				selected_plug = plug
 				plug_mouse_offset = plug.translation - project_mouse_ray_onto_plane()
+				plug_mouse_offset.z = 0
 				print(plug_mouse_offset)
 				break
 		plug_query_pos = null

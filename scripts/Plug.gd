@@ -31,10 +31,10 @@ func get_collision_shape() -> CollisionShape:
 
 
 func set_position(new_pos: Vector3):
-	translation = new_pos
+	global_transform.origin = new_pos
 
 func get_position() -> Vector3:
-	return translation
+	return global_transform.origin
 
 func query(ray_start: Vector3, ray_dir: Vector3) -> Vector3:
 	var ray_end = ray_start + ray_dir * 1000.0

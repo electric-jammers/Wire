@@ -3,6 +3,9 @@ extends Spatial
 var sockets: = Array()
 var cables: = Array()
 
+onready var headphone_socket = get_node("HeadphoneSocket")
+onready var headphone_cable = get_node("HeadphoneFloppyCable")
+
 var level_index := 0
 var level: Node = null
 

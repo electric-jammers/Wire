@@ -27,16 +27,16 @@ stiffness_coefficient = 2.0
 [node name="Sockets" type="Node" parent="."]
 
 [node name="Socket" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.227405, 0.561763, -0.0353055 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.227405, 1.13758, 0.153232 )
 
 [node name="Socket2" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 0.561763, -0.0353055 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 1.13758, 0.153232 )
 
 [node name="Socket3" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 0.16619, -0.0353055 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 0.742009, 0.153232 )
 
 [node name="Socket4" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.261432, 0.16619, -0.0353055 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.261432, 0.742009, 0.153232 )
 
 [node name="Cables" type="Node" parent="."]
 
@@ -68,3 +68,12 @@ shadow_enabled = true
 [node name="DirectionalLight" type="DirectionalLight" parent="Environment"]
 transform = Transform( 0.817067, -0.40875, -0.406601, 0.563704, 0.714374, 0.414617, 0.12099, -0.567973, 0.814106, -2.24143, 1.39107, 2.79541 )
 light_energy = 0.07
+
+[node name="HeadphoneFloppyCable" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.361647, 1.13225, 0.138559 )
+stiffness_coefficient = 2.0
+first_plug_name = NodePath("../HeadphoneFloppyCable/Plug")
+second_plug_name = NodePath("../HeadphoneFloppyCable/Plug2")
+
+[node name="HeadphoneSocket" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.354794, 1.14039, -0.0353055 )
