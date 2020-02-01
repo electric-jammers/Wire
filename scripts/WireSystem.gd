@@ -2,14 +2,19 @@ extends Node
 
 var all_cables = []
 var all_plugs = []
+var all_sockets = []
 var selected_plug: Plug = null
+var hovered_socket: Socket = null
 var plug_query_pos = null
 var plug_query_dir = null
 var board_size: Vector2
 
+var hover_threshold = 0.1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	all_plugs = get_tree().get_nodes_in_group("plugs")
+	all_sockets = get_tree().get_nodes_in_group("sockets")
 	board_size = Vector2(2, 2)
 
 func mouse_pos_to_board_pos(mouse_pos) -> Vector3:
@@ -27,7 +32,8 @@ func _process(delta):
 
 	if Input.is_action_just_released("select"):
 		if selected_plug != null:
-#			selected_plug.set_attached(false)
+			if hovered_socket != null:
+				selected_plug.set_attached(hovered_socket)
 			selected_plug = null
 	
 	if selected_plug != null:
@@ -35,9 +41,14 @@ func _process(delta):
 		var camera = get_parent().get_node("Camera")
 		var query_pos = camera.project_ray_origin(mouse_pos)
 		var query_dir = camera.project_ray_normal(mouse_pos)
-		var board = Plane(Vector3(0, 0, 1), 0)
+		var board = Plane(Vector3(0, 0, 1), 0.0)
 		var new_plug_pos = board.intersects_ray(query_pos, query_dir)
-		selected_plug.set_position(new_plug_pos)
+		if new_plug_pos != null:
+			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, selected_plug.get_position().z))
+			for socket in all_sockets:
+				if socket.translation.distance_to(selected_plug.get_position()) < hover_threshold:
+					hovered_socket = socket
+					break
 
 func _unhandled_input(event):
 	if event is InputEventKey:

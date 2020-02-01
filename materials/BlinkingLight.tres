@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 
 uniform vec3 colour = vec3(1.0, 0.0, 0.0);
@@ -18,7 +18,7 @@ void fragment()
 }"
 
 [resource]
-shader = SubResource( 3 )
+shader = SubResource( 1 )
 shader_param/colour = Vector3( 1, 0, 0 )
 shader_param/glow_offset = 1.0
 shader_param/flash_speed = 10.0

@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/rope/main.gd" type="Script" id=1]
+[ext_resource path="res://images/background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/rope/rope.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment() {
+
+float threshold = 0.4;
+
+vec4 col = texture(TEXTURE, UV);
+COLOR.a  = smoothstep( threshold, threshold + 0.2, col.a );
+//COLOR.rgb = vec3( 1.0, 0.9, 0.9 );// * ( SCREEN_UV.y*2.0 + 0.5 );
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewport")
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="background"]
+z_index = -100
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Debug" type="Label" parent="GUI"]
+margin_left = 24.5548
+margin_top = 24.5548
+margin_right = 65.5548
+margin_bottom = 55.5548
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Debug
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 768 )
+transparent_bg = true
+hdr = false
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="rope" parent="Viewport" instance=ExtResource( 3 )]
+position = Vector2( 496.629, 61.8803 )
+stretch_stiffness = 0.5
+
+[node name="viewport_texture" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = SubResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 768 )
+__meta__ = {
+"_edit_lock_": true
+}
