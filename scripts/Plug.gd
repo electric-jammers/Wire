@@ -1,4 +1,4 @@
-extends Spatial
+extends RigidBody
 class_name Plug
 
 # Private state
