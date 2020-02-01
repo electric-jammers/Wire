@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://materials/BlinkingLight.tres" type="Material" id=2]
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=3]
 [ext_resource path="res://scripts/WireSystem.gd" type="Script" id=5]
+[ext_resource path="res://scenes/prefabs/Socket.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -80,3 +81,17 @@ material/0 = SubResource( 4 )
 [node name="FloppyCable" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.138559 )
 stiffness_coefficient = 2.0
+
+[node name="Sockets" type="Spatial" parent="."]
+
+[node name="Socket" parent="Sockets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.227405, 0.561763, -0.0353055 )
+
+[node name="Socket2" parent="Sockets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 0.561763, -0.0353055 )
+
+[node name="Socket3" parent="Sockets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.165455, 0.16619, -0.0353055 )
+
+[node name="Socket4" parent="Sockets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.261432, 0.16619, -0.0353055 )

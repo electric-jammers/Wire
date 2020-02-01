@@ -15,19 +15,16 @@ func _ready():
 		_bind(get_node(first_plug_name), get_node(second_plug_name))
 
 func _process(delta: float):
-	if _first_plug.is_attached():
-		set_start_attached(true)
-		start_location = _first_plug.translation
-	else:
-		set_start_attached(false)
-		_first_plug.global_transform.origin = to_global(get_start_location())
+	pass
+#		set_start_attached(false)
+#		_first_plug.global_transform.origin = to_global(get_start_location())
 
-	if _second_plug.is_attached():
-		set_end_attached(true)
-		end_location = _second_plug.translation
-	else:
-		set_end_attached(false)
-		_second_plug.global_transform.origin = to_global(get_end_location())
+#	if _second_plug.is_attached():
+#		set_end_attached(true)
+#		end_location = _second_plug.translation
+#	else:
+#		set_end_attached(false)
+#		_second_plug.global_transform.origin = to_global(get_end_location())
 
 func _bind(first_plug: Plug, second_plug: Plug):
 	_first_plug = first_plug
