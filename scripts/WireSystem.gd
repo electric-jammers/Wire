@@ -44,9 +44,7 @@ func _process(delta):
 		if selected_plug != null:
 			if hovered_socket != null:
 				selected_plug.set_attached(true)
-				print("plugged")
-			else:
-				print("unplugged")
+				hovered_socket.plug_in(selected_plug)
 			selected_plug = null
 	
 	if selected_plug != null:
@@ -57,10 +55,12 @@ func _process(delta):
 		if new_plug_pos != null:
 			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, selected_plug.get_position().z) + plug_mouse_offset)
 			for socket in all_sockets:
-				print(socket.global_transform.origin.distance_to(selected_plug.get_position()))
-				if socket.global_transform.origin.distance_to(selected_plug.get_position()) < hover_threshold:
+				var dist = socket.global_transform.origin.distance_to(selected_plug.get_position())
+				print(dist)
+				if dist < hover_threshold:
 					hovered_socket = socket
 					hovered_socket.set_hovered(true)
+					selected_plug.global_transform.looking_at(hovered_socket.global_transform.origin, Vector3.UP)
 					break
 			print()
 
@@ -75,10 +75,14 @@ func _physics_process(delta):
 			var new_plug_pos = plug.query(plug_query_pos, plug_query_dir)
 			if new_plug_pos != Vector3.INF:
 				selected_plug = plug
-				plug_mouse_offset = plug.translation - project_mouse_ray_onto_plane()
-				plug_mouse_offset.z = 0
-				print(plug_mouse_offset)
-				break
+				var plane_intersection = project_mouse_ray_onto_plane()
+				if plane_intersection != null:
+					plug_mouse_offset = plug.translation - plane_intersection
+					plug_mouse_offset.z = 0
+					print(plug_mouse_offset)
+					break
+				if selected_plug.plugged_socket != null:
+					hovered_socket.unplug()
 		plug_query_pos = null
 
 

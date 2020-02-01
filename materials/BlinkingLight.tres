@@ -3,7 +3,7 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 
-uniform vec3 colour = vec3(1.0, 0.0, 0.0);
+uniform vec4 colour = vec4(1.0, 0.0, 0.0, 1.0);
 
 uniform float glow_offset = 0.0;
 uniform float flash_speed = 10.0;
@@ -13,8 +13,9 @@ void fragment()
 {
 	float glow_factor = (sin(glow_offset + TIME * flash_speed) + 1.0) / 2.0;
 	
-	ALBEDO = colour;
-	EMISSION = colour * clamp(glow_factor, 0.1, 1.0) * glow_amount;
+	ALBEDO = colour.xyz;
+	EMISSION = colour.xyz * clamp(glow_factor, 0.1, 1.0) * glow_amount;
+	ALPHA = colour.w;
 }"
 
 [resource]
