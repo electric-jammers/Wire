@@ -1,0 +1,32 @@
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="PanoramaSky" id=1]
+
+[resource]
+background_sky = SubResource( 1 )
+fog_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 13.3
+tonemap_mode = 2
+tonemap_exposure = 7.06
+ss_reflections_enabled = true
+ss_reflections_max_steps = 128
+ss_reflections_fade_in = 1.47737
+ss_reflections_fade_out = 2.07053
+ssao_enabled = true
+ssao_radius = 0.1
+ssao_intensity = 20.0
+ssao_light_affect = 0.17
+ssao_quality = 2
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.6
+dof_blur_far_transition = 0.94
+dof_blur_far_amount = 0.13
+dof_blur_far_quality = 2
+glow_enabled = true
+glow_intensity = 0.05
+glow_bloom = 0.12
+glow_blend_mode = 0
+glow_hdr_threshold = 1.53
+glow_bicubic_upscale = true
+adjustment_contrast = 0.93
