@@ -27,17 +27,16 @@ func _process(delta):
 
 	if Input.is_action_just_released("select"):
 		if selected_plug != null:
-			print("Released")
 #			selected_plug.set_attached(false)
 			selected_plug = null
 	
 	if selected_plug != null:
-#		var mouse_pos = get_viewport().get_mouse_position()
-#		var camera = get_parent().get_node("Camera")
-#		plug_query_pos = camera.project_ray_origin(mouse_pos)
-#		plug_query_dir = camera.project_ray_normal(mouse_pos)
-		
-		var new_plug_pos = mouse_pos_to_board_pos(get_viewport().get_mouse_position())
+		var mouse_pos = get_viewport().get_mouse_position()
+		var camera = get_parent().get_node("Camera")
+		var query_pos = camera.project_ray_origin(mouse_pos)
+		var query_dir = camera.project_ray_normal(mouse_pos)
+		var board = Plane(Vector3(0, 0, 1), 0)
+		var new_plug_pos = board.intersects_ray(query_pos, query_dir)
 		selected_plug.set_position(new_plug_pos)
 
 func _unhandled_input(event):
@@ -52,6 +51,7 @@ func _physics_process(delta):
 			if new_plug_pos != Vector3.INF:
 				print("Hit! " + str(new_plug_pos))
 				selected_plug = plug
+				break
 		plug_query_pos = null
 
 
