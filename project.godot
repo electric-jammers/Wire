@@ -14,14 +14,38 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Cable.gd"
 }, {
+"base": "Node2D",
+"class": "LinkNode",
+"language": "GDScript",
+"path": "res://scripts/rope/distance_constraint.gd"
+}, {
 "base": "KinematicBody",
 "class": "Plug",
 "language": "GDScript",
 "path": "res://scripts/Plug.gd"
+}, {
+"base": "Node2D",
+"class": "PointMass",
+"language": "GDScript",
+"path": "res://scripts/rope/point_mass.gd"
+}, {
+"base": "Node2D",
+"class": "PositionBasedDynamics",
+"language": "GDScript",
+"path": "res://scripts/rope/position_based_dynamics.gd"
+}, {
+"base": "PositionBasedDynamics",
+"class": "Rope",
+"language": "GDScript",
+"path": "res://scripts/rope/rope.gd"
 } ]
 _global_script_class_icons={
 "Cable": "",
-"Plug": ""
+"LinkNode": "",
+"Plug": "",
+"PointMass": "",
+"PositionBasedDynamics": "",
+"Rope": ""
 }
 
 [application]
