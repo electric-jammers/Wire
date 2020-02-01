@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Wire"
+run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
