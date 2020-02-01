@@ -3,13 +3,13 @@ class_name Plug
 
 # Private state
 var _attached:= false 			setget set_attached,is_attached
+var plugged_socket = null
 
 # References
 var cable_ref: WeakRef
 var is_end := false
 
 func _ready():
-	
 	pass # Replace with function body.
 
 func set_attached(attached: bool):
@@ -28,7 +28,6 @@ func is_attached() -> bool:
 
 func get_collision_shape() -> CollisionShape:
 	return $CollisionShape as CollisionShape
-
 
 func set_position(new_pos: Vector3):
 	global_transform.origin = new_pos

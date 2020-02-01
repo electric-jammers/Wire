@@ -5,6 +5,12 @@ class_name Cable
 var _first_plug: Plug
 var _second_plug: Plug
 
+func get_first_plug() -> Plug:
+	return _first_plug
+
+func get_second_plug() -> Plug:
+	return _second_plug
+
 # Exports
 export(NodePath) var first_plug_name: String
 export(NodePath) var second_plug_name: String

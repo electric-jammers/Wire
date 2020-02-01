@@ -16,6 +16,11 @@ func _ready() -> void:
 	sockets = sockets_root.get_children()
 	cables = cables_root.get_children()
 	
+	for socket in sockets:
+		if socket == headphone_socket:
+			headphone_cable.set_start_attached(true)
+			socket.plug_in(headphone_cable.get_first_plug())
+	
 	_load_level(Levels.get_level_path(level_index))
 
 
