@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Plug",
 "language": "GDScript",
 "path": "res://scripts/Plug.gd"
+}, {
+"base": "Node",
+"class": "Socket",
+"language": "GDScript",
+"path": "res://scripts/Socket.gd"
 } ]
 _global_script_class_icons={
 "Cable": "",
-"Plug": ""
+"Plug": "",
+"Socket": ""
 }
 
 [application]

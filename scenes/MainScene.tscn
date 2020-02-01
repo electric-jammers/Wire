@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://materials/BlinkingLight.tres" type="Material" id=2]
 [ext_resource path="res://scripts/WireSystem.gd" type="Script" id=5]
-[ext_resource path="res://scenes/prefabs/Socket.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -75,8 +75,5 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.5, -
 mesh = SubResource( 1 )
 material/0 = SubResource( 4 )
 
-[node name="Plug" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.192537, 0.755202, 0 )
-
-[node name="Plug2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.241564, 0.755202, 0 )
+[node name="FloppyCable" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.138559 )

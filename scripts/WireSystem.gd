@@ -33,7 +33,7 @@ func _process(delta):
 	if Input.is_action_just_released("select"):
 		if selected_plug != null:
 			if hovered_socket != null:
-				selected_plug.set_attached(hovered_socket)
+				selected_plug.set_attached(true)
 			selected_plug = null
 	
 	if selected_plug != null:
