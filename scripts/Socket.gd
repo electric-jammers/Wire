@@ -1,4 +1,4 @@
-extends Node
+extends Spatial
 class_name Socket
 
 enum State { OFF, OUTGOING_CALL, CONNECTED }
@@ -24,6 +24,13 @@ func set_hovered(inhovered):
 func plug_in(plug):
 	if plug_occupied == null:
 		plug_occupied = plug
+		plug_occupied.set_position(global_transform.origin)
+		plug_occupied.plugged_socket = self
+
+func unplug():
+	if plug_occupied != null:
+		plug_occupied.plugged_socket = null
+		plug_occupied = null
 
 func get_occupier():
 	return plug_occupied
