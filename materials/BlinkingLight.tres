@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type spatial;
+
+uniform vec3 colour = vec3(1.0, 0.0, 0.0);
+
+uniform float glow_offset = 0.0;
+uniform float flash_speed = 10.0;
+uniform float glow_amount = 5.0;
+
+void fragment()
+{
+	float glow_factor = (sin(glow_offset + TIME * flash_speed) + 1.0) / 2.0;
+	
+	ALBEDO = colour;
+	EMISSION = colour * clamp(glow_factor, 0.1, 1.0) * glow_amount;
+}"
+
+[resource]
+shader = SubResource( 3 )
+shader_param/colour = Vector3( 1, 0, 0 )
+shader_param/glow_offset = 1.0
+shader_param/flash_speed = 10.0
+shader_param/glow_amount = 5.0
