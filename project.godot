@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "FloppyCable",
+"class": "Cable",
+"language": "GDScript",
+"path": "res://scripts/Cable.gd"
+}, {
+"base": "MeshInstance",
+"class": "Plug",
+"language": "GDScript",
+"path": "res://scripts/Plug.gd"
+} ]
 _global_script_class_icons={
-
+"Cable": "",
+"Plug": ""
 }
 
 [application]
