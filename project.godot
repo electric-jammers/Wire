@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Cable.gd"
 }, {
-"base": "MeshInstance",
+"base": "RigidBody",
 "class": "Plug",
 "language": "GDScript",
 "path": "res://scripts/Plug.gd"
