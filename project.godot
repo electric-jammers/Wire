@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Rope",
+"base": "FloppyCable",
 "class": "Cable",
 "language": "GDScript",
 "path": "res://scripts/Cable.gd"
@@ -29,30 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Levels.gd"
 }, {
-"base": "Node2D",
-"class": "LinkNode",
-"language": "GDScript",
-"path": "res://scripts/rope/distance_constraint.gd"
-}, {
 "base": "KinematicBody",
 "class": "Plug",
 "language": "GDScript",
 "path": "res://scripts/Plug.gd"
-}, {
-"base": "Node2D",
-"class": "PointMass",
-"language": "GDScript",
-"path": "res://scripts/rope/point_mass.gd"
-}, {
-"base": "Node2D",
-"class": "PositionBasedDynamics",
-"language": "GDScript",
-"path": "res://scripts/rope/position_based_dynamics.gd"
-}, {
-"base": "PositionBasedDynamics",
-"class": "Rope",
-"language": "GDScript",
-"path": "res://scripts/rope/rope.gd"
 }, {
 "base": "Node",
 "class": "Socket",
@@ -64,11 +44,7 @@ _global_script_class_icons={
 "LevelBase": "",
 "LevelSetup": "",
 "Levels": "",
-"LinkNode": "",
 "Plug": "",
-"PointMass": "",
-"PositionBasedDynamics": "",
-"Rope": "",
 "Socket": ""
 }
 

@@ -1,4 +1,4 @@
-extends Rope
+extends FloppyCable
 class_name Cable
 
 # References
