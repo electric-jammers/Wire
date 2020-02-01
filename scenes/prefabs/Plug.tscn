@@ -7,10 +7,9 @@
 radius = 0.03
 height = 0.1
 
-[node name="Plug" type="RigidBody" groups=[
+[node name="Plug" type="KinematicBody" groups=[
 "plugs",
 ]]
-gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="PlugMesh" type="MeshInstance" parent="."]

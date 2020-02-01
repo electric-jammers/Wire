@@ -1,4 +1,4 @@
-extends RigidBody
+extends KinematicBody
 class_name Plug
 
 # Private state
@@ -15,13 +15,20 @@ func _ready():
 func set_attached(attached: bool):
 	_attached = attached
 
-	pass
+	if cable_ref:
+		var cable: FloppyCable = cable_ref.get_ref() 
+		if cable:
+			if is_end:
+				cable.is_end_attached = attached
+			else:
+				cable.is_start_attached = attached
+
+func is_attached() -> bool:
+	return _attached
 
 func get_collision_shape() -> CollisionShape:
 	return $CollisionShape as CollisionShape
 
-func is_attached() -> bool:
-	return _attached
 
 func set_position(new_pos: Vector3):
 	translation = new_pos
