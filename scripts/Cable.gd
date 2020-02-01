@@ -12,6 +12,7 @@ export(NodePath) var second_plug_name: String
 
 func _ready():
 	if first_plug_name and second_plug_name:
+		print("asfasf " + first_plug_name)
 		_bind(get_node(first_plug_name), get_node(second_plug_name))
 
 func _process(delta: float):
@@ -19,13 +20,13 @@ func _process(delta: float):
 		set_start_attached(true)
 	else:
 		set_start_attached(false)
-		_first_plug.global_transform.origin = get_start_location()
+		_first_plug.global_transform.origin = to_global(get_start_location())
 
 	if _second_plug.is_attached():
 		set_end_attached(true)
 	else:
 		set_end_attached(false)
-		_second_plug.global_transform.origin = get_end_location()
+		_second_plug.global_transform.origin = to_global(get_end_location())
 	
 		
 
