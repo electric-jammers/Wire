@@ -40,7 +40,8 @@ end_location = Vector3( 0.00257301, -2.10976, 0 )
 stiffness_coefficient = 0.0
 cable_length = 2.0
 script = ExtResource( 3 )
-first_plug_name = NodePath("Spatial/Plug")
+first_plug_name = NodePath("Plug")
+second_plug_name = NodePath("Plug2")
 
 [node name="Plug" parent="FloppyCable" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.758133, 0, 0 )
