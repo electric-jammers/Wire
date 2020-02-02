@@ -15,15 +15,30 @@ var calling_to: Socket = null
 var plug_occupied: Plug = null
 var state setget set_state
 var hovered := false
+var call_duration := 0.0
+
+var time_connected := 0.0
 
 onready var socketLightMesh = $module/Module2
 onready var light_material_resource = preload("res://materials/BlinkingLight.tres")
 onready var light_material: ShaderMaterial = light_material_resource.duplicate()
 
+signal call_complete(socket)
+signal call_started(calling_socket, called_socket)
+
 func _ready():
 	socketLightMesh.set_surface_material(2, light_material)
 	set_state(State.OFF)
-	
+
+func _process(delta: float):
+	if state == State.CONNECTED and call_duration > 0.0:
+		var now = OS.get_ticks_msec()
+		if ((now - time_connected) / 1000.0) > call_duration:
+			var other_plug := plug_occupied.get_other_plug()
+			other_plug.plugged_socket.set_state(State.OFF)
+			set_state(State.OFF)
+			# Call complete
+			emit_signal("call_complete", self)
 	
 func plug_in(plug: Plug):
 	if not plug_occupied:
@@ -70,15 +85,17 @@ func unplug():
 		plug_occupied = null
 		
 		$Sounds/Unplugged.play()
-	
+
 func get_occupier():
 	return plug_occupied
-	
 
-func ring(target_socket: Socket):
+
+func ring(target_socket: Socket, call_duration_seconds := 3.0):
 	if calling_to == null:
 		calling_to = target_socket
+		call_duration = call_duration_seconds
 		set_state(State.OUTGOING_CALL)
+		emit_signal("call_started", self, calling_to)
 
 	
 func set_state(new_state) -> void:
@@ -112,6 +129,7 @@ func set_state(new_state) -> void:
 			light_material.set_shader_param("colour", Color.green)
 			light_material.set_shader_param("flash_speed", 0.0)
 			if cable: cable.talking_state = Cable.TalkingState.TALKING_FLIP_FLOP
+			time_connected = OS.get_ticks_msec()
 		State.ERROR:
 			light_material.set_shader_param("colour", Color.red)
 			light_material.set_shader_param("flash_speed", 20.0)
