@@ -1,16 +1,20 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://backgrounds/lobby.hdr" type="Texture" id=1]
 
 [sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
 
 [resource]
-background_mode = 1
+background_mode = 2
 background_sky = SubResource( 1 )
-background_energy = 0.0
+background_energy = 0.1
 fog_color = Color( 0, 0, 0, 1 )
 fog_depth_begin = 0.0
 fog_depth_end = 13.3
 tonemap_mode = 2
-tonemap_exposure = 7.56
+tonemap_exposure = 5.11
+tonemap_white = 0.5
 ss_reflections_max_steps = 128
 ss_reflections_fade_in = 1.04466
 ss_reflections_fade_out = 4.0
@@ -21,6 +25,7 @@ ssao_bias = 0.001
 ssao_light_affect = 1.0
 ssao_quality = 2
 ssao_edge_sharpness = 3.0
+dof_blur_far_enabled = true
 dof_blur_far_distance = 0.67
 dof_blur_far_transition = 0.94
 dof_blur_far_amount = 0.13
