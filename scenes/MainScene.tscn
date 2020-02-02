@@ -206,10 +206,10 @@ cable_width = 0.01
 [node name="Environment" type="Node" parent="."]
 
 [node name="switchboard" parent="Environment" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.595584, -0.0811799 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.679074, -0.0811799 )
 
 [node name="room" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00673449, 0.00148928, -0.0904632 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102938, 0.00148928, 0.000758134 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = ExtResource( 7 )
@@ -225,7 +225,7 @@ transform = Transform( 0.817067, -0.40875, -0.406601, 0.563704, 0.714374, 0.4146
 light_energy = 0.07
 
 [node name="HeadphoneFloppyCable" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397901, 1.49345, 0.178338 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32635, 1.49345, 0.178338 )
 stiffness_coefficient = 2.0
 cable_length = 0.3
 cable_width = 0.01
