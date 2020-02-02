@@ -25,7 +25,6 @@ func _process(_delta) -> void: #similiar to tick in UE4
 			if main_scene.sockets[1].state == Socket.State.CONNECTED:
 				if not complete1:
 					timer.start(1) #seconds until the first call is starting
-					timer.connect("timeout", self, "_timer_finished")	
 					complete1 = true
 				
 		if main_scene.sockets[6].state == Socket.State.CONNECTED: 
@@ -38,7 +37,6 @@ func _process(_delta) -> void: #similiar to tick in UE4
 
 func _ready() -> void:
 	timer.start(4) #seconds until the first call is starting
-	timer.connect("timeout", self, "_timer_finished")
 
 
 func _timer_finished() -> void:
