@@ -57,7 +57,10 @@ func plug_in(plug: Plug):
 				if plug.is_operator:
 					set_state(State.WITH_OPERATOR)
 				else:
-					set_state(State.ERROR)
+					var other_plug: = plug.get_other_plug()
+					if other_plug and other_plug.plugged_socket:
+						set_state(State.CONNECTED)
+						other_plug.plugged_socket.set_state(State.CONNECTED)
 					
 			State.ON_HOLD:
 				var other_plug: = plug.get_other_plug()

@@ -23,7 +23,10 @@ func _process(_delta) -> void: #similiar to tick in UE4
 	if not complete: #if complete false play level
 		if main_scene.sockets[0].state == Socket.State.CONNECTED: 
 			if main_scene.sockets[1].state == Socket.State.CONNECTED:
-				complete1 = true
+				if not complete1:
+					timer.start(1) #seconds until the first call is starting
+					timer.connect("timeout", self, "_timer_finished")	
+					complete1 = true
 				
 		if main_scene.sockets[6].state == Socket.State.CONNECTED: 
 			if main_scene.sockets[7].state == Socket.State.CONNECTED:
@@ -39,4 +42,7 @@ func _ready() -> void:
 
 
 func _timer_finished() -> void:
-	main_scene.sockets[0].ring(main_scene.sockets[1])  #### Call from socket 0 to socket 1
+	if complete1:
+		main_scene.sockets[6].ring(main_scene.sockets[7])
+	else:
+		main_scene.sockets[0].ring(main_scene.sockets[1])  #### Call from socket 0 to socket 1
