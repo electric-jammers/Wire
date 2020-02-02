@@ -3,30 +3,31 @@
 [sub_resource type="PanoramaSky" id=1]
 
 [resource]
+background_mode = 1
 background_sky = SubResource( 1 )
+background_energy = 0.0
 fog_color = Color( 0, 0, 0, 1 )
 fog_depth_begin = 0.0
 fog_depth_end = 13.3
 tonemap_mode = 2
-tonemap_exposure = 7.06
-ss_reflections_enabled = true
+tonemap_exposure = 7.56
 ss_reflections_max_steps = 128
-ss_reflections_fade_in = 1.47737
-ss_reflections_fade_out = 2.07053
+ss_reflections_fade_in = 1.04466
+ss_reflections_fade_out = 4.0
 ssao_enabled = true
 ssao_radius = 0.1
-ssao_intensity = 20.0
-ssao_light_affect = 0.17
+ssao_intensity = 1.5
+ssao_bias = 0.001
+ssao_light_affect = 1.0
 ssao_quality = 2
-dof_blur_far_enabled = true
-dof_blur_far_distance = 0.6
+ssao_edge_sharpness = 3.0
+dof_blur_far_distance = 0.67
 dof_blur_far_transition = 0.94
 dof_blur_far_amount = 0.13
 dof_blur_far_quality = 2
 glow_enabled = true
-glow_intensity = 0.05
-glow_bloom = 0.12
+glow_intensity = 0.1
+glow_bloom = 0.97
 glow_blend_mode = 0
-glow_hdr_threshold = 1.53
 glow_bicubic_upscale = true
-adjustment_contrast = 0.93
+adjustment_enabled = true
