@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/ui/RoundComplete.gd" type="Script" id=1]
+[ext_resource path="res://textures/ui/paper.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/Typewriter-Bold-Large.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/Typewriter-Bold-MediumLarge.tres" type="DynamicFont" id=4]
+[ext_resource path="res://default_theme.tres" type="Theme" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animate_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Movable:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.233258, 0.757859 ),
+"update": 0,
+"values": [ 800, 0.0 ]
+}
+
+[node name="RoundComplete" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Movable" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 1024, 1024 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paper" type="TextureRect" parent="Movable"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1024, 1024 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Movable/Paper"]
+anchor_right = 1.0
+margin_top = 100.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 3 )
+text = "ROUND COMPLETE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Movable/Paper"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -434.0
+margin_top = -162.0
+margin_right = 506.0
+margin_bottom = -62.0
+theme = ExtResource( 5 )
+custom_constants/separation = 100
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" type="Button" parent="Movable/Paper/HBoxContainer"]
+margin_left = 119.0
+margin_right = 365.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 4 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="Button" parent="Movable/Paper/HBoxContainer"]
+margin_left = 465.0
+margin_right = 820.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 4 )
+text = "Next Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/animate_in = SubResource( 1 )
+[connection signal="pressed" from="Movable/Paper/HBoxContainer/PlayAgain" to="." method="_on_click_restart"]
+[connection signal="pressed" from="Movable/Paper/HBoxContainer/NextLevel" to="." method="_on_click_next_level"]

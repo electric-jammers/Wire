@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Plug.gd"
 }, {
+"base": "Control",
+"class": "RoundComplete",
+"language": "GDScript",
+"path": "res://scenes/ui/RoundComplete.gd"
+}, {
 "base": "Spatial",
 "class": "Socket",
 "language": "GDScript",
@@ -51,6 +56,7 @@ _global_script_class_icons={
 "Levels": "",
 "MainScene": "",
 "Plug": "",
+"RoundComplete": "",
 "Socket": ""
 }
 

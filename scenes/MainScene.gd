@@ -30,9 +30,11 @@ func _ready() -> void:
 
 
 func _on_level_complete():
-	# SHOW THINGY
-	print("Level " + str(level_index) + " complete!")
-
+	var finished_ui_scene = load("res://scenes/ui/RoundComplete.tscn") as PackedScene
+	var finished_ui = finished_ui_scene.instance()
+	finished_ui.main_scene = self
+	get_tree().root.add_child(finished_ui)
+	
 
 func _on_call_with_operator(from: Socket, to: Socket):
 	var call_idx = checklist.add_call(from.name, to.name)
@@ -63,6 +65,12 @@ func _load_level(path : String):
 	level.connect("level_complete", self, "_on_level_complete")
 	add_child(new_level)
 	
+func reload_level():
+	_load_level(Levels.get_level_path(level_index))
+	
+func load_next_level():
+	level_index += 1
+	_load_level(Levels.get_level_path(level_index))
 	
 func _setup_level(level_setup : LevelSetup) -> void:
 	for i in range(level_setup.MAX_SOCKETS):
