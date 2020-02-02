@@ -35,9 +35,11 @@ func rotate_plug_based_on_cable(delta: float, plug: Plug):
 		var dir = (pos2 - pos1).normalized()
 		if dir != Vector3.UP:
 			var right = dir.cross(Vector3.UP).normalized()
-			var forward = dir
-			var up = right.cross(forward)
-			plug.global_transform.basis = plug.global_transform.basis.slerp(Basis(right, up, forward), clamp(delta*10.0, 0, 1))
+			var forward = dir.normalized()
+			var up = right.cross(forward).normalized()
+			var oldBasis = plug.global_transform.basis.orthonormalized()
+			var newBasis = Basis(-right, up, forward).orthonormalized()
+			plug.global_transform.basis = Basis(oldBasis.get_rotation_quat().slerp(newBasis.get_rotation_quat(), clamp(delta*10.0, 0, 1)))
 
 func _process(delta: float):
 	if _first_plug.is_attached():
