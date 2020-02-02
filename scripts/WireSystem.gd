@@ -21,6 +21,11 @@ func initialize():
 	all_sockets = get_tree().get_nodes_in_group("sockets")
 	board_size = Vector2(2, 2)
 
+	for plug in all_plugs:
+		if plug.plugged_socket:
+			selected_plug.set_attached(false)
+			selected_plug.rotation = selected_plug.startup_transform.basis.get_euler()
+			selected_plug.plugged_socket.unplug()
 
 func mouse_pos_to_board_pos(mouse_pos) -> Vector3:
 	var screen_size = OS.get_screen_size()
