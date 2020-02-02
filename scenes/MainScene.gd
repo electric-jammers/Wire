@@ -43,9 +43,10 @@ func _on_call_with_operator(from: Socket, to: Socket):
 
 
 func _on_call_complete(socket: Socket):
-	var call_idx = active_call_map[socket.name]
-	active_call_map.erase(call_idx)
-	checklist.call_complete(call_idx)
+	if active_call_map.has(socket.name):
+		var call_idx = active_call_map[socket.name]
+		active_call_map.erase(call_idx)
+		checklist.call_complete(call_idx)
 
 
 func _load_level(path : String):

@@ -23,9 +23,11 @@ func initialize():
 
 	for plug in all_plugs:
 		if plug.plugged_socket:
-			selected_plug.set_attached(false)
-			selected_plug.rotation = selected_plug.startup_transform.basis.get_euler()
-			selected_plug.plugged_socket.unplug()
+			if selected_plug:
+				selected_plug.set_attached(false)
+				selected_plug.rotation = selected_plug.startup_transform.basis.get_euler()
+				if selected_plug.plugged_socket:
+					selected_plug.plugged_socket.unplug()
 
 func mouse_pos_to_board_pos(mouse_pos) -> Vector3:
 	var screen_size = OS.get_screen_size()
