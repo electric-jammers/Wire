@@ -52,8 +52,8 @@ func plug_in(plug: Plug):
 						other_plug.plugged_socket.set_state(State.CONNECTED)
 	
 	plug_occupied.set_position(global_transform.origin)
-	plug_occupied.rotation = Vector3(PI/2, 0, 0)
-	plug_occupied.translate(Vector3(0.0, 0.08, 0.0))
+	plug_occupied.rotation = Vector3(0, 0, 0)
+	plug_occupied.translate(Vector3(0.0, 0.0, 0.1))
 
 
 func unplug():

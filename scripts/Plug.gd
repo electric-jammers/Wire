@@ -11,6 +11,11 @@ var plugged_socket = null
 var cable_ref: WeakRef
 var is_end := false
 
+var startup_transform: Transform
+
+func _ready():
+	startup_transform = global_transform
+
 func set_attached(attached: bool):
 	_attached = attached
 

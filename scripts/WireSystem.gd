@@ -10,7 +10,7 @@ var plug_query_dir = null
 var board_size: Vector2
 var plug_mouse_offset := Vector3.ZERO
 
-var hover_threshold = 0.15
+var hover_threshold = 0.1
 
 func _ready():
 	initialize()
@@ -38,7 +38,6 @@ func project_mouse_ray_onto_plane() -> Vector3:
 	return new_plug_pos
 
 
-
 func _process(delta):
 	if Input.is_action_just_pressed("select"):
 		if selected_plug == null:
@@ -50,8 +49,8 @@ func _process(delta):
 	if Input.is_action_just_released("select"):
 		if selected_plug != null:
 			if selected_plug.plugged_socket and hovered_socket != selected_plug.plugged_socket:
-					selected_plug.set_attached(false)
-					selected_plug.plugged_socket.unplug()
+				selected_plug.set_attached(false)
+				selected_plug.plugged_socket.unplug()
 			if hovered_socket != null:
 				selected_plug.set_attached(true)
 				hovered_socket.plug_in(selected_plug)
@@ -65,18 +64,15 @@ func _process(delta):
 			
 			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, selected_plug.get_position().z))
 			for socket in all_sockets:
-				var dist = socket.global_transform.origin.distance_to(selected_plug.get_position())
+				var socket_xy := Vector2(socket.global_transform.origin.x, socket.global_transform.origin.y)
+				var plug_xy := Vector2(selected_plug.get_position().x, selected_plug.get_position().y)
+				var dist = socket_xy.distance_to(plug_xy)
 				if dist < hover_threshold:
 					hovered_socket = socket
-					
 					selected_plug.global_transform = selected_plug.global_transform.looking_at(hovered_socket.global_transform.origin, Vector3.UP)
-					
-					var z_rot: = 90.0
-					if (hovered_socket.global_transform.origin - selected_plug.global_transform.origin).x < 0.0:
-						z_rot = -90.0
-					
-					selected_plug.rotate_z(z_rot)
 					break
+				else:
+					selected_plug.rotation = Vector3(0, 0, 0)
 
 
 func _physics_process(delta):

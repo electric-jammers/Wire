@@ -22,183 +22,183 @@ script = ExtResource( 5 )
 [node name="Sockets" type="Node" parent="."]
 
 [node name="Socket" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.994, 0.0275526 )
 
 [node name="Socket2" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.896, 0.0275526 )
 
 [node name="Socket3" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.796, 0.0275526 )
 
 [node name="Socket6" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.994, 0.0275526 )
 
 [node name="Socket5" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.896, 0.0275526 )
 
 [node name="Socket4" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.796, 0.0275526 )
 
 [node name="Socket9" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.994, 0.0275526 )
 
 [node name="Socket8" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.896, 0.0275526 )
 
 [node name="Socket7" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.796, 0.0275526 )
 
 [node name="Socket12" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.994, 0.0275526 )
 
 [node name="Socket11" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.896, 0.0275526 )
 
 [node name="Socket10" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.796, 0.0275526 )
 
 [node name="Socket15" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.994, 0.0275526 )
 
 [node name="Socket14" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.896, 0.0275526 )
 
 [node name="Socket13" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.796, 0.0275526 )
 
 [node name="Socket18" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.994, 0.0275526 )
 
 [node name="Socket17" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.896, 0.0275526 )
 
 [node name="Socket16" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.796, 0.0275526 )
 
 [node name="Socket21" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.994, 0.0275526 )
 
 [node name="Socket20" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.896, 0.0275526 )
 
 [node name="Socket19" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.796, 0.0275526 )
 
 [node name="Socket24" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.994, 0.0275526 )
 
 [node name="Socket23" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.896, 0.0275526 )
 
 [node name="Socket22" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.796, 0.0275526 )
 
 [node name="Socket27" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.994, 0.0275526 )
 
 [node name="Socket26" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.896, 0.0275526 )
 
 [node name="Socket25" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.796, 0.0275526 )
 
 [node name="Socket30" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.994, 0.0275526 )
 
 [node name="Socket29" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.896, 0.0275526 )
 
 [node name="Socket28" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.796, 0.0275526 )
 
 [node name="Socket33" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.994, 0.0275526 )
 
 [node name="Socket32" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.896, 0.0275526 )
 
 [node name="Socket31" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.796, 0.0275526 )
 
 [node name="Socket36" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.994, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.994, 0.0275526 )
 
 [node name="Socket35" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.896, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.896, 0.0275526 )
 
 [node name="Socket34" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.796, 0.044 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.796, 0.0275526 )
 
 [node name="Cables" type="Node" parent="."]
 
 [node name="FloppyCable" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.345592, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.345592, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.04
 cable_width = 0.01
 
 [node name="FloppyCable2" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282589, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282589, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable3" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218218, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218218, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable4" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156573, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156573, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable5" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0914783, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0914783, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable6" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344172, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344172, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable7" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029247, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029247, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable8" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093159, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093159, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable9" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153249, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153249, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable10" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218892, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218892, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable11" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279446, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279446, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable12" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337066, 0.713232, 0.138559 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337066, 0.713232, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
@@ -206,10 +206,10 @@ cable_width = 0.01
 [node name="Environment" type="Node" parent="."]
 
 [node name="switchboard" parent="Environment" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.595584, 0.000441492 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.595584, -0.0811799 )
 
 [node name="room" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00673449, 0.00148928, -0.00958586 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00673449, 0.00148928, -0.0904632 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = ExtResource( 7 )
@@ -225,7 +225,7 @@ transform = Transform( 0.817067, -0.40875, -0.406601, 0.563704, 0.714374, 0.4146
 light_energy = 0.07
 
 [node name="HeadphoneFloppyCable" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397901, 1.49345, 0.153728 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397901, 1.49345, 0.178338 )
 stiffness_coefficient = 2.0
 cable_length = 0.3
 cable_width = 0.01
