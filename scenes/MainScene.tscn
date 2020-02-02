@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meshes/switchboard.fbx" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/WireSystem.gd" type="Script" id=5]
 [ext_resource path="res://scenes/prefabs/Socket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/VincentTest.tres" type="Environment" id=7]
+[ext_resource path="res://icons/headset.svg" type="Texture" id=8]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -229,10 +230,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32635, 1.49345, 0.178338 )
 stiffness_coefficient = 2.0
 cable_length = 0.3
 cable_width = 0.01
-first_plug_name = NodePath("../HeadphoneFloppyCable/Plug")
-second_plug_name = NodePath("../HeadphoneFloppyCable/Plug2")
 
 [node name="Plug2" parent="HeadphoneFloppyCable" index="1"]
 is_operator = true
+
+[node name="Headphones" type="Sprite3D" parent="HeadphoneFloppyCable/Plug2" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00137055 )
+pixel_size = 0.0003
+texture = ExtResource( 8 )
 
 [editable path="HeadphoneFloppyCable"]
