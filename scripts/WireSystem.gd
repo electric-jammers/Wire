@@ -61,13 +61,12 @@ func _process(delta):
 	if selected_plug != null:
 		var new_plug_pos = project_mouse_ray_onto_plane()
 		if new_plug_pos != null:
-			
-			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, selected_plug.get_position().z))
+			selected_plug.set_position(Vector3(new_plug_pos.x, new_plug_pos.y, 0.17))
 			for socket in all_sockets:
 				var socket_xy := Vector2(socket.global_transform.origin.x, socket.global_transform.origin.y)
 				var plug_xy := Vector2(selected_plug.get_position().x, selected_plug.get_position().y)
 				var dist = socket_xy.distance_to(plug_xy)
-				if dist < hover_threshold:
+				if dist < hover_threshold and not socket.plug_occupied:
 					hovered_socket = socket
 					selected_plug.global_transform = selected_plug.global_transform.looking_at(hovered_socket.global_transform.origin, Vector3.UP)
 					break

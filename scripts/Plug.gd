@@ -28,12 +28,15 @@ func set_attached(attached: bool):
 				cable.is_start_attached = attached
 	
 			if not attached:
-				if cable.get_second_plug() != self and not cable.get_second_plug().is_attached() or \
-				   cable.get_first_plug() != self and not cable.get_first_plug().is_attached():
+				if cable.get_first_plug() != self and not cable.get_first_plug().is_attached():
+					# Neither end is attached, return to start pos
+					global_transform = startup_transform
+					cable.get_first_plug().global_transform = cable.get_first_plug().startup_transform
+					cable.get_first_plug().set_attached(true)
+				if cable.get_second_plug() != self and not cable.get_second_plug().is_attached():
 					# Neither end is attached, return to start pos
 					global_transform = startup_transform
 					set_attached(true)
-			
 
 func is_attached() -> bool:
 	return _attached
