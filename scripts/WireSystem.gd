@@ -14,6 +14,9 @@ var hover_threshold = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initialize()
+
+func initialize():
 	all_plugs = get_tree().get_nodes_in_group("plugs")
 	all_sockets = get_tree().get_nodes_in_group("sockets")
 	board_size = Vector2(2, 2)
@@ -48,6 +51,7 @@ func _process(delta):
 				selected_plug.set_attached(true)
 				hovered_socket.plug_in(selected_plug)
 				selected_plug.rotation = Vector3(PI/2, 0, 0)
+				selected_plug.translate(Vector3(0.0, 0.08, 0.0))
 			else:
 				selected_plug.set_attached(false)
 				selected_plug.rotation = Vector3.ZERO

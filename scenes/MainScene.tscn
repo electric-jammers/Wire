@@ -141,6 +141,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.796, 0.044 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.595584, 0.000441492 )
 
 [node name="room" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00838733, -0.00145888, -0.00778663 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = ExtResource( 7 )
