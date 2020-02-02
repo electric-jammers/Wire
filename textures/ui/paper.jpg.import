@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.stex"
+path.s3tc="res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.s3tc.stex"
+path.etc2="res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/ui/paper.jpg"
-dest_files=[ "res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.stex" ]
+dest_files=[ "res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.s3tc.stex", "res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.etc2.stex" ]
 
 [params]
 
