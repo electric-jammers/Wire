@@ -12,6 +12,7 @@ var level: Node = null
 onready var sockets_root = $Sockets
 onready var cables_root = $Cables
 onready var wire_system = $WireSystem
+onready var checklist = $Checklist
 
 func _ready() -> void:
 	sockets = sockets_root.get_children()
@@ -20,6 +21,10 @@ func _ready() -> void:
 	headphone_cable.set_start_attached(true)
 	
 	_load_level(Levels.get_level_path(level_index))
+
+
+func _on_level_complete():
+	print("Level " + str(level_index) + " complete!")
 
 
 func _load_level(path : String):
@@ -35,6 +40,7 @@ func _load_level(path : String):
 		level.queue_free()
 		remove_child(level)
 	level = new_level
+	level.connect("level_complete", self, "_on_level_complete")
 	add_child(new_level)
 	
 	
