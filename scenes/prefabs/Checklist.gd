@@ -10,7 +10,7 @@ func initialize():
 
 
 func add_call(from: String, to: String) -> int:
-	var new_entry: = "{0} calling {1}".format([from, to])
+	var new_entry: = "[color=black]{0} calling {1}[/color]".format([from, to])
 	calls.append(new_entry)
 	_reconstruct_text()
 
@@ -19,7 +19,7 @@ func add_call(from: String, to: String) -> int:
 
 func call_complete(idx: int):
 	if idx >= 0 and idx < calls.size():
-		calls[idx] = "[s]%s[/s]" % calls[idx]
+		calls[idx] = "[s][color=black]%s[/color][/s]" % calls[idx]
 		_reconstruct_text()
 
 

@@ -25,113 +25,77 @@ script = ExtResource( 5 )
 
 [node name="Sockets" type="Node" parent="."]
 
-[node name="Socket" parent="Sockets" instance=ExtResource( 6 )]
+[node name="A1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.994, 0.0275526 )
 
-[node name="Socket2" parent="Sockets" instance=ExtResource( 6 )]
+[node name="A2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.896, 0.0275526 )
 
-[node name="Socket3" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343, 0.796, 0.0275526 )
-
-[node name="Socket6" parent="Sockets" instance=ExtResource( 6 )]
+[node name="B1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.994, 0.0275526 )
 
-[node name="Socket5" parent="Sockets" instance=ExtResource( 6 )]
+[node name="B2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.896, 0.0275526 )
 
-[node name="Socket4" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282259, 0.796, 0.0275526 )
-
-[node name="Socket9" parent="Sockets" instance=ExtResource( 6 )]
+[node name="C1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.994, 0.0275526 )
 
-[node name="Socket8" parent="Sockets" instance=ExtResource( 6 )]
+[node name="C2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.896, 0.0275526 )
 
-[node name="Socket7" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222639, 0.796, 0.0275526 )
-
-[node name="Socket12" parent="Sockets" instance=ExtResource( 6 )]
+[node name="D1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.994, 0.0275526 )
 
-[node name="Socket11" parent="Sockets" instance=ExtResource( 6 )]
+[node name="D2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.896, 0.0275526 )
 
-[node name="Socket10" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162373, 0.796, 0.0275526 )
-
-[node name="Socket15" parent="Sockets" instance=ExtResource( 6 )]
+[node name="E1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.994, 0.0275526 )
 
-[node name="Socket14" parent="Sockets" instance=ExtResource( 6 )]
+[node name="E2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.896, 0.0275526 )
 
-[node name="Socket13" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102278, 0.796, 0.0275526 )
-
-[node name="Socket18" parent="Sockets" instance=ExtResource( 6 )]
+[node name="F1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.994, 0.0275526 )
 
-[node name="Socket17" parent="Sockets" instance=ExtResource( 6 )]
+[node name="F2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.896, 0.0275526 )
 
-[node name="Socket16" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0416655, 0.796, 0.0275526 )
-
-[node name="Socket21" parent="Sockets" instance=ExtResource( 6 )]
+[node name="G1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.994, 0.0275526 )
 
-[node name="Socket20" parent="Sockets" instance=ExtResource( 6 )]
+[node name="G2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.896, 0.0275526 )
 
-[node name="Socket19" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175929, 0.796, 0.0275526 )
-
-[node name="Socket24" parent="Sockets" instance=ExtResource( 6 )]
+[node name="H1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.994, 0.0275526 )
 
-[node name="Socket23" parent="Sockets" instance=ExtResource( 6 )]
+[node name="H2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.896, 0.0275526 )
 
-[node name="Socket22" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0788162, 0.796, 0.0275526 )
-
-[node name="Socket27" parent="Sockets" instance=ExtResource( 6 )]
+[node name="I1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.994, 0.0275526 )
 
-[node name="Socket26" parent="Sockets" instance=ExtResource( 6 )]
+[node name="I2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.896, 0.0275526 )
 
-[node name="Socket25" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139149, 0.796, 0.0275526 )
-
-[node name="Socket30" parent="Sockets" instance=ExtResource( 6 )]
+[node name="J1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.994, 0.0275526 )
 
-[node name="Socket29" parent="Sockets" instance=ExtResource( 6 )]
+[node name="J2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.896, 0.0275526 )
 
-[node name="Socket28" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19851, 0.796, 0.0275526 )
-
-[node name="Socket33" parent="Sockets" instance=ExtResource( 6 )]
+[node name="L1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.994, 0.0275526 )
 
-[node name="Socket32" parent="Sockets" instance=ExtResource( 6 )]
+[node name="L2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.896, 0.0275526 )
 
-[node name="Socket31" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260709, 0.796, 0.0275526 )
-
-[node name="Socket36" parent="Sockets" instance=ExtResource( 6 )]
+[node name="M1" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.994, 0.0275526 )
 
-[node name="Socket35" parent="Sockets" instance=ExtResource( 6 )]
+[node name="M2" parent="Sockets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.896, 0.0275526 )
-
-[node name="Socket34" parent="Sockets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.796, 0.0275526 )
 
 [node name="Cables" type="Node" parent="."]
 
