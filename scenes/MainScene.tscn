@@ -235,7 +235,7 @@ cable_width = 0.01
 is_operator = true
 
 [node name="Headphones" type="Sprite3D" parent="HeadphoneFloppyCable/Plug2" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00137055 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00247979 )
 pixel_size = 0.0003
 texture = ExtResource( 8 )
 
