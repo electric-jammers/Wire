@@ -32,7 +32,7 @@ func _process(_delta) -> void: #similiar to tick in UE4
 			if main_scene.sockets[15].state == Socket.State.CONNECTED:
 				complete2 = true
 				
-	if complete1 == true && complete2 == true:
+	if !complete && complete1 == true && complete2 == true:
 		complete = true  #finish state if both connected
 		emit_signal("level_complete")
 

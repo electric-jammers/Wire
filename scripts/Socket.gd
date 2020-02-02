@@ -35,7 +35,8 @@ func _process(delta: float):
 		var now = OS.get_ticks_msec()
 		if ((now - time_connected) / 1000.0) > call_duration:
 			var other_plug := plug_occupied.get_other_plug()
-			other_plug.plugged_socket.set_state(State.OFF)
+			if other_plug.plugged_socket:
+				other_plug.plugged_socket.set_state(State.OFF)
 			set_state(State.OFF)
 			# Call complete
 			emit_signal("call_complete", self)
