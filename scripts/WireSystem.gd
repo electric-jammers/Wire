@@ -67,7 +67,7 @@ func _process(delta):
 				var socket_xy := Vector2(socket.global_transform.origin.x, socket.global_transform.origin.y)
 				var plug_xy := Vector2(selected_plug.get_position().x, selected_plug.get_position().y)
 				var dist = socket_xy.distance_to(plug_xy)
-				if dist < hover_threshold:
+				if dist < hover_threshold and not socket.plug_occupied:
 					hovered_socket = socket
 					selected_plug.global_transform = selected_plug.global_transform.looking_at(hovered_socket.global_transform.origin, Vector3.UP)
 					break
