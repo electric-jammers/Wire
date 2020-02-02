@@ -32,7 +32,7 @@ func project_mouse_ray_onto_plane() -> Vector3:
 	var camera = get_parent().get_node("Camera")
 	var query_pos = camera.project_ray_origin(mouse_pos)
 	var query_dir = camera.project_ray_normal(mouse_pos)
-	var board = Plane(Vector3(0, 0, 1), 0.0)
+	var board = Plane(Vector3(0, 0, 1), 0.1)
 	var new_plug_pos = board.intersects_ray(query_pos, query_dir)
 	
 	return new_plug_pos
@@ -45,7 +45,7 @@ func _process(delta):
 			var camera = get_parent().get_node("Camera")
 			plug_query_pos = camera.project_ray_origin(mouse_pos)
 			plug_query_dir = camera.project_ray_normal(mouse_pos)
-
+	
 	if Input.is_action_just_released("select"):
 		if selected_plug != null:
 			if selected_plug.plugged_socket and hovered_socket != selected_plug.plugged_socket:
@@ -55,6 +55,8 @@ func _process(delta):
 			if hovered_socket != null:
 				selected_plug.set_attached(true)
 				hovered_socket.plug_in(selected_plug)
+			else:
+				selected_plug.set_attached(false)
 			selected_plug = null
 	
 	hovered_socket = null
@@ -81,6 +83,8 @@ func _physics_process(delta):
 			var new_plug_pos = plug.query(plug_query_pos, plug_query_dir)
 			if new_plug_pos != Vector3.INF:
 				selected_plug = plug
+				if selected_plug.plugged_socket:
+					selected_plug.plugged_socket.unplug()
 				selected_plug.set_attached(true)
 				var plane_intersection = project_mouse_ray_onto_plane()
 				if plane_intersection != null:
