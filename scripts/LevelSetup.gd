@@ -1,7 +1,7 @@
 extends Node
 class_name LevelSetup
 
-const MAX_SOCKETS = 4
+const MAX_SOCKETS = 36
 const MAX_CABLES = 0
 
 var sockets: = Array()
