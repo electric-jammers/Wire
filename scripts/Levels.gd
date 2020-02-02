@@ -9,5 +9,7 @@ static func get_level_path(level_index : int) -> String:
 			return "res://scenes/levels/Level1.tscn"
 		2:
 			return "res://scenes/levels/Level2.tscn"
+		3:
+			return "res://scenes/levels/Level3.tscn"
 		_:
 			return "res://scenes/levels/LevelBase.tscn"
