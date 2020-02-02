@@ -78,6 +78,8 @@ hue_variation_random = 0.04
 
 [node name="Particles" type="Particles" parent="."]
 material_override = SubResource( 1 )
+emitting = false
+one_shot = true
 speed_scale = 2.25
 explosiveness = 0.9
 randomness = 0.12
@@ -86,7 +88,9 @@ draw_pass_1 = SubResource( 7 )
 
 [node name="Particles_falling" type="Particles" parent="."]
 material_override = SubResource( 8 )
+emitting = false
 amount = 30
+one_shot = true
 speed_scale = 1.5
 explosiveness = 0.9
 randomness = 0.12
