@@ -7,7 +7,7 @@ enum TalkingState { NONE, TALKING_DOWN, TALKING_UP, TALKING_FLIP_FLOP }
 var talking_fx_speed := 1.5
 var _talking_fx_distance := 0.0
 var _talking_fx_flop := false
-var _talking_state = TalkingState.NONE
+var talking_state = TalkingState.NONE
 
 # References
 var _first_plug: Plug
@@ -59,7 +59,7 @@ func _process(delta: float):
 	_process_talking_fx(delta)
 
 func _process_talking_fx(delta: float):
-	match _talking_state:
+	match talking_state:
 		TalkingState.TALKING_DOWN: 
 			_talking_fx_distance += delta * talking_fx_speed
 			if _talking_fx_distance > 1.0:
@@ -84,12 +84,12 @@ func _process_talking_fx(delta: float):
 			
 
 	$TalkyBall.translation = to_local(get_position_on_cable(_talking_fx_distance))
-	$TalkyBall.visible = _talking_state != TalkingState.NONE
+	$TalkyBall.visible = talking_state != TalkingState.NONE
 	
 	var second_distance = _talking_fx_distance - 0.4
 	if second_distance < 0.0: second_distance += 1.0
 	$TalkyBall2.translation = to_local(get_position_on_cable(second_distance))
-	$TalkyBall2.visible = _talking_state != TalkingState.NONE
+	$TalkyBall2.visible = talking_state != TalkingState.NONE
 
 func _bind(first_plug: Plug, second_plug: Plug):
 	_first_plug = first_plug
