@@ -34,7 +34,6 @@ func rotate_plug_based_on_cable(delta: float, plug: Plug):
 	if pos1 != pos2:
 		var dir = (pos2 - pos1).normalized()
 		if dir != Vector3.UP:
-			print(dir)
 			var right = dir.cross(Vector3.UP).normalized()
 			var forward = dir
 			var up = right.cross(forward)
