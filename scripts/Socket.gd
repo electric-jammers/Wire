@@ -54,6 +54,7 @@ func plug_in(plug: Plug):
 	plug_occupied.set_position(global_transform.origin)
 	plug_occupied.rotation = Vector3(0, 0, 0)
 	plug_occupied.translate(Vector3(0.0, 0.0, 0.1))
+	$Sounds/PluggedIn.play()
 
 
 func unplug():
@@ -68,8 +69,9 @@ func unplug():
 		plug_occupied.rotation = Vector3.ZERO
 		plug_occupied.plugged_socket = null
 		plug_occupied = null
-
-
+		
+		$Sounds/Unplugged.play()
+	
 func get_occupier():
 	return plug_occupied
 	
