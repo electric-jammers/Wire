@@ -24,6 +24,7 @@ onready var light_material_resource = preload("res://materials/BlinkingLight.tre
 onready var light_material: ShaderMaterial = light_material_resource.duplicate()
 
 signal call_complete(socket)
+signal call_started(calling_socket, called_socket)
 
 func _ready():
 	socketLightMesh.set_surface_material(2, light_material)
@@ -94,6 +95,7 @@ func ring(target_socket: Socket, call_duration_seconds := 3.0):
 		calling_to = target_socket
 		call_duration = call_duration_seconds
 		set_state(State.OUTGOING_CALL)
+		emit_signal("call_started", self, calling_to)
 
 	
 func set_state(new_state) -> void:
