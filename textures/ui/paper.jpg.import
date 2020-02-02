@@ -2,17 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/headset.svg-55e61def9966bb5b4d3dc771955c91f9.s3tc.stex"
-path.etc2="res://.import/headset.svg-55e61def9966bb5b4d3dc771955c91f9.etc2.stex"
+path="res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/headset.svg"
-dest_files=[ "res://.import/headset.svg-55e61def9966bb5b4d3dc771955c91f9.s3tc.stex", "res://.import/headset.svg-55e61def9966bb5b4d3dc771955c91f9.etc2.stex" ]
+source_file="res://textures/ui/paper.jpg"
+dest_files=[ "res://.import/paper.jpg-58c980dd33510d9b5bcdc606df7c67b1.stex" ]
 
 [params]
 
@@ -25,7 +23,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

@@ -15,6 +15,10 @@ var startup_transform: Transform
 
 func _ready():
 	startup_transform = global_transform
+	
+	if is_operator:
+		$jackplug_black.visible = true
+		$jackplug.visible = false
 
 func set_attached(attached: bool):
 	_attached = attached
