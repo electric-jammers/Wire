@@ -28,21 +28,34 @@ func _ready():
 	if first_plug_name and second_plug_name:
 		_bind(get_node(first_plug_name), get_node(second_plug_name))
 
-func _process(delta: float):	
+func rotate_plug_based_on_cable(delta: float, plug: Plug):
+	var pos1 := get_position_on_cable(0.1)
+	var pos2 := get_position_on_cable(0.01)
+	if pos1 != pos2:
+		var dir = (pos2 - pos1).normalized()
+		if dir != Vector3.UP:
+			var right = dir.cross(Vector3.UP).normalized()
+			var forward = dir
+			var up = right.cross(forward)
+			plug.global_transform.basis = plug.global_transform.basis.slerp(Basis(right, up, forward), clamp(delta*10.0, 0, 1))
+
+func _process(delta: float):
 	if _first_plug.is_attached():
 		set_start_attached(true)
 		start_location = _first_plug.translation
 	else:
 		set_start_attached(false)
 		_first_plug.global_transform.origin = to_global(get_start_location())
-
+		rotate_plug_based_on_cable(delta, _first_plug)
+	
 	if _second_plug.is_attached():
 		set_end_attached(true)
 		end_location = _second_plug.translation
 	else:
 		set_end_attached(false)
 		_second_plug.global_transform.origin = to_global(get_end_location())
-
+		rotate_plug_based_on_cable(delta, _second_plug)
+	
 	_process_talking_fx(delta)
 
 func _process_talking_fx(delta: float):

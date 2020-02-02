@@ -47,7 +47,7 @@ func plug_in(plug: Plug):
 			State.ON_HOLD:
 				var other_plug: = plug.get_other_plug()
 				if other_plug and other_plug.plugged_socket:
-					if other_plug.plugged_socket.id == calling_to:
+					if other_plug.plugged_socket == calling_to:
 						set_state(State.CONNECTED)
 						other_plug.plugged_socket.set_state(State.CONNECTED)
 	
@@ -61,12 +61,11 @@ func unplug():
 	if plug_occupied != null:	
 		match state:
 			State.WITH_OPERATOR:
-					set_state(State.ON_HOLD)
+				set_state(State.ON_HOLD)
 			
 			State.CONNECTED:
 				set_state(State.ERROR)
-						
-		plug_occupied.rotation = Vector3.ZERO
+		
 		plug_occupied.plugged_socket = null
 		plug_occupied = null
 		

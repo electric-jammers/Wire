@@ -50,6 +50,7 @@ func _process(delta):
 		if selected_plug != null:
 			if selected_plug.plugged_socket and hovered_socket != selected_plug.plugged_socket:
 				selected_plug.set_attached(false)
+				selected_plug.rotation = selected_plug.startup_transform.basis.get_euler()
 				selected_plug.plugged_socket.unplug()
 			if hovered_socket != null:
 				selected_plug.set_attached(true)
