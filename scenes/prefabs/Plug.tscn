@@ -1,22 +1,20 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://meshes/Plug.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://meshes/jackplug.fbx" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Plug.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.03
-height = 0.1
+radius = 0.075916
+height = 0.0955829
 
 [node name="Plug" type="KinematicBody" groups=[
 "plugs",
 ]]
 script = ExtResource( 2 )
 
-[node name="PlugMesh" type="MeshInstance" parent="."]
-mesh = ExtResource( 1 )
-material/0 = null
-material/1 = null
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0335954, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0729346, 0 )
 shape = SubResource( 1 )
+
+[node name="jackplug" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0.00351333, 0.0085526, 0.0040191 )

@@ -9,9 +9,6 @@ var plugged_socket = null
 var cable_ref: WeakRef
 var is_end := false
 
-func _ready():
-	pass # Replace with function body.
-
 func set_attached(attached: bool):
 	_attached = attached
 

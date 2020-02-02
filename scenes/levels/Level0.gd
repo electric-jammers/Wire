@@ -6,4 +6,6 @@ func create_level_setup() -> LevelSetup:
 	setup.sockets[0] = true
 	setup.sockets[1] = true
 	
+	setup.cables[0] = true
+	
 	return setup
