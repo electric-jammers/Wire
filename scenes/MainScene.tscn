@@ -231,3 +231,8 @@ cable_length = 0.3
 cable_width = 0.01
 first_plug_name = NodePath("../HeadphoneFloppyCable/Plug")
 second_plug_name = NodePath("../HeadphoneFloppyCable/Plug2")
+
+[node name="Plug2" parent="HeadphoneFloppyCable" index="1"]
+is_operator = true
+
+[editable path="HeadphoneFloppyCable"]

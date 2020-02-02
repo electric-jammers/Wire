@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Levels.gd"
 }, {
+"base": "Spatial",
+"class": "MainScene",
+"language": "GDScript",
+"path": "res://scenes/MainScene.gd"
+}, {
 "base": "KinematicBody",
 "class": "Plug",
 "language": "GDScript",
@@ -44,6 +49,7 @@ _global_script_class_icons={
 "LevelBase": "",
 "LevelSetup": "",
 "Levels": "",
+"MainScene": "",
 "Plug": "",
 "Socket": ""
 }

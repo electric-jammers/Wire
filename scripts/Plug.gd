@@ -1,6 +1,8 @@
 extends KinematicBody
 class_name Plug
 
+export var is_operator: = false
+
 # Private state
 var _attached:= false 			setget set_attached,is_attached
 var plugged_socket = null
@@ -22,6 +24,16 @@ func set_attached(attached: bool):
 
 func is_attached() -> bool:
 	return _attached
+	
+	
+func get_other_plug() -> Plug:
+	var cable = cable_ref.get_ref()
+	if cable:
+		if is_end:
+			return cable.get_first_plug()
+		else:
+			return cable.get_second_plug()
+	return null
 
 func get_collision_shape() -> CollisionShape:
 	return $CollisionShape as CollisionShape
