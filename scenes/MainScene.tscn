@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meshes/switchboard.fbx" type="PackedScene" id=2]
@@ -9,14 +9,13 @@
 [ext_resource path="res://scenes/VincentTest.tres" type="Environment" id=7]
 [ext_resource path="res://icons/headset.svg" type="Texture" id=8]
 [ext_resource path="res://meshes/table.fbx" type="PackedScene" id=9]
-[ext_resource path="res://scenes/prefabs/Checklist.tscn" type="PackedScene" id=10]
-[ext_resource path="res://music/newbaby.wav" type="AudioStream" id=11]
+[ext_resource path="res://music/newbaby.wav" type="AudioStream" id=10]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.963026, 0.269407, 0, -0.269407, 0.963026, -0.00019598, 1.06907, 0.641535 )
+transform = Transform( 1, 0, 0, 0, 0.963026, 0.269407, 0, -0.269407, 0.963026, 0.116684, 1.06907, 0.641535 )
 environment = ExtResource( 7 )
 fov = 58.2
 
@@ -245,9 +244,10 @@ pixel_size = 0.0001
 texture = ExtResource( 8 )
 
 [node name="Checklist" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32635, 1.49345, 0.178338 )
+transform = Transform( 0.682904, 0, -0.730508, 0, 1, 0, 0.730508, 0, 0.682904, 0.436196, 0.0206394, -0.0112253 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 autoplay = true
 
 [editable path="HeadphoneFloppyCable"]
