@@ -4,12 +4,18 @@ var calls: = Array()
 
 onready var rtlabel = $Viewport/Control/MarginContainer/RichTextLabel
 
+func initialize():
+	calls.clear()
+	_reconstruct_text()
+
+
 func add_call(from: String, to: String) -> int:
 	var new_entry: = "{0} calling {1}".format([from, to])
 	calls.append(new_entry)
 	_reconstruct_text()
 
 	return calls.size() - 1
+
 
 func call_complete(idx: int):
 	if idx >= 0 and idx < calls.size():
@@ -19,10 +25,6 @@ func call_complete(idx: int):
 
 func _ready() -> void:
 	_reconstruct_text()
-	
-	add_call("A1", "B1")
-	add_call("A1", "A2")
-	call_complete(0)
 
 
 func _reconstruct_text():
