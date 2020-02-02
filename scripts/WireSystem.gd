@@ -10,7 +10,7 @@ var plug_query_dir = null
 var board_size: Vector2
 var plug_mouse_offset := Vector3.ZERO
 
-var hover_threshold = 0.1
+var hover_threshold = 0.05
 
 func _ready():
 	initialize()
@@ -32,7 +32,7 @@ func project_mouse_ray_onto_plane() -> Vector3:
 	var camera = get_parent().get_node("Camera")
 	var query_pos = camera.project_ray_origin(mouse_pos)
 	var query_dir = camera.project_ray_normal(mouse_pos)
-	var board = Plane(Vector3(0, 0, 1), 0.1)
+	var board = Plane(Vector3(0, 0, 1), 0.17)
 	var new_plug_pos = board.intersects_ray(query_pos, query_dir)
 	
 	return new_plug_pos

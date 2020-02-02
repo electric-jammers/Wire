@@ -18,8 +18,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0767433 )
 shape = SubResource( 1 )
 
 [node name="jackplug" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.00272928, -0.00390299, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.00272928, -0.00390299, 0.00191057 )
 
 [node name="jackplug_black" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.003, -0.004, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.003, -0.004, 0.00191057 )
 visible = false
