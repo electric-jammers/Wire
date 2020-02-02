@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/prefabs/Checklist.gd" type="Script" id=1]
 [ext_resource path="res://textures/ui/paper.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/JMH Typewriter-Bold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -19,7 +20,11 @@ albedo_texture = ExtResource( 2 )
 
 [sub_resource type="World" id=4]
 
-[sub_resource type="RichTextEffect" id=5]
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="RichTextEffect" id=6]
 
 [node name="Checklist" type="Spatial"]
 script = ExtResource( 1 )
@@ -54,10 +59,11 @@ margin_bottom = 20.0
 [node name="RichTextLabel" type="RichTextLabel" parent="Viewport/Control/MarginContainer"]
 margin_right = 165.0
 margin_bottom = 552.0
+custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[s]Call A2[/s]"
 text = "Call A2"
-custom_effects = [ SubResource( 5 ) ]
+custom_effects = [ SubResource( 6 ) ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
