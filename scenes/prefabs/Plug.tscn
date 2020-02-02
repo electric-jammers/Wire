@@ -4,8 +4,8 @@
 [ext_resource path="res://scripts/Plug.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.075916
-height = 0.0955829
+radius = 0.0312649
+height = 0.112197
 
 [node name="Plug" type="KinematicBody" groups=[
 "plugs",
