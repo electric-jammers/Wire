@@ -61,12 +61,11 @@ func unplug():
 	if plug_occupied != null:	
 		match state:
 			State.WITH_OPERATOR:
-					set_state(State.ON_HOLD)
+				set_state(State.ON_HOLD)
 			
 			State.CONNECTED:
 				set_state(State.ERROR)
-						
-		plug_occupied.rotation = Vector3.ZERO
+		
 		plug_occupied.plugged_socket = null
 		plug_occupied = null
 		
