@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/prefabs/Cable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meshes/switchboard.fbx" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/prefabs/Socket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/VincentTest.tres" type="Environment" id=7]
 [ext_resource path="res://icons/headset.svg" type="Texture" id=8]
+[ext_resource path="res://meshes/table.fbx" type="PackedScene" id=9]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -133,73 +134,73 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322331, 0.796, 0.0275526 )
 [node name="Cables" type="Node" parent="."]
 
 [node name="FloppyCable" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.345592, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372531, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.04
 cable_width = 0.01
 
 [node name="FloppyCable2" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282589, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30965, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable3" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218218, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24016, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable4" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156573, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173635, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable5" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0914783, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10854, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable6" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344172, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0429481, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable7" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029247, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249815, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable8" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093159, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0948652, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable9" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153249, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158368, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable10" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218892, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224011, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable11" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279446, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.291389, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
 
 [node name="FloppyCable12" parent="Cables" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337066, 0.713232, 0.0573456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353275, 0.648559, 0.0573456 )
 stiffness_coefficient = 2.0
 cable_length = 0.07
 cable_width = 0.01
@@ -207,7 +208,7 @@ cable_width = 0.01
 [node name="Environment" type="Node" parent="."]
 
 [node name="switchboard" parent="Environment" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000728741, 0.679074, -0.0811799 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0111375, -0.046237, -0.0711365 )
 
 [node name="room" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102938, 0.00148928, 0.000758134 )
@@ -224,6 +225,8 @@ shadow_enabled = true
 [node name="DirectionalLight" type="DirectionalLight" parent="Environment"]
 transform = Transform( 0.817067, -0.40875, -0.406601, 0.563704, 0.714374, 0.414617, 0.12099, -0.567973, 0.814106, -2.24143, 1.39107, 2.79541 )
 light_energy = 0.07
+
+[node name="table" parent="Environment" instance=ExtResource( 9 )]
 
 [node name="HeadphoneFloppyCable" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32635, 1.49345, 0.178338 )

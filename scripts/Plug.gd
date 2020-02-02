@@ -7,6 +7,11 @@ export var is_operator: = false
 var _attached:= false 			setget set_attached,is_attached
 var plugged_socket = null
 
+onready var _collisionShape := get_node("CollisionShape").shape as CapsuleShape
+
+var collider_radius_attached = 0.05
+var collider_radius_unattached = 0.03
+
 # References
 var cable_ref: WeakRef
 var is_end := false
@@ -16,12 +21,16 @@ var startup_transform: Transform
 func _ready():
 	startup_transform = global_transform
 	
+	_collisionShape.radius = collider_radius_attached if _attached else collider_radius_unattached
+	
 	if is_operator:
 		$jackplug_black.visible = true
 		$jackplug.visible = false
 
 func set_attached(attached: bool):
 	_attached = attached
+
+	_collisionShape.radius = collider_radius_attached if _attached else collider_radius_unattached
 
 	if cable_ref:
 		var cable: FloppyCable = cable_ref.get_ref() 
