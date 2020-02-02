@@ -1,0 +1,29 @@
+[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 1.04926, 0, 1, Vector2( 0.0638978, 0.0670455 ), 1.04926, -1.10449, 1, 1, Vector2( 0.124601, 0 ), -1.10449, 0.0, 1, 1, Vector2( 0.440895, 0 ), 0.0, 6.28371, 1, 1, Vector2( 0.507987, 0.421591 ), 6.28371, -3.77023, 1, 1, Vector2( 0.619808, 0 ), -3.77023, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.207668, 0.4625 ), 2.22712, 0.0917888, 1, 0, Vector2( 0.322684, 0 ), -4.9421, 1.77841, 0, 1, Vector2( 0.460064, 0.244318 ), 1.77841, 0.0, 1, 0, Vector2( 0.591054, 0 ), -1.86516, 0.67843, 1, 1, Vector2( 0.763578, 0.117045 ), 0.67843, -0.49507, 1, 1, Vector2( 1, 0 ), -0.49507, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[resource]
+lifetime_randomness = 0.34
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.2
+initial_velocity_random = 0.25
+angular_velocity = 8.0
+angular_velocity_random = 0.27
+linear_accel = -0.5
+angle = 52.7
+angle_random = 1.0
+scale = 0.2
+scale_curve = SubResource( 4 )
+color = Color( 0.537255, 0.796078, 1, 1 )
+hue_variation_curve = SubResource( 2 )

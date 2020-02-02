@@ -47,29 +47,30 @@ func plug_in(plug: Plug):
 			State.ON_HOLD:
 				var other_plug: = plug.get_other_plug()
 				if other_plug and other_plug.plugged_socket:
-					if other_plug.plugged_socket.id == calling_to:
+					if other_plug.plugged_socket == calling_to:
 						set_state(State.CONNECTED)
 						other_plug.plugged_socket.set_state(State.CONNECTED)
 	
 	plug_occupied.set_position(global_transform.origin)
 	plug_occupied.rotation = Vector3(0, 0, 0)
 	plug_occupied.translate(Vector3(0.0, 0.0, 0.1))
+	$Sounds/PluggedIn.play()
 
 
 func unplug():
 	if plug_occupied != null:	
 		match state:
 			State.WITH_OPERATOR:
-					set_state(State.ON_HOLD)
+				set_state(State.ON_HOLD)
 			
 			State.CONNECTED:
 				set_state(State.ERROR)
-						
-		plug_occupied.rotation = Vector3.ZERO
+		
 		plug_occupied.plugged_socket = null
 		plug_occupied = null
-
-
+		
+		$Sounds/Unplugged.play()
+	
 func get_occupier():
 	return plug_occupied
 	
@@ -83,23 +84,35 @@ func ring(target_socket: Socket):
 func set_state(new_state) -> void:
 	state = new_state
 	
+	var cable = null
+	if plug_occupied and plug_occupied.cable_ref:
+		cable = plug_occupied.cable_ref.get_ref()
+	
 	match state:
 		State.OFF:
 			light_material.set_shader_param("colour", Color(1.0, 1.0, 1.0, 0.01))
 			light_material.set_shader_param("flash_speed", 0.0)
 			calling_to = null
+			
+			if cable: cable.talking_state = Cable.TalkingState.NONE
+			
 		State.OUTGOING_CALL:
 			light_material.set_shader_param("colour", Color.orangered)
 			light_material.set_shader_param("flash_speed", 10.0)
+			if cable: cable.talking_state = Cable.TalkingState.TALKING_DOWN
 		State.WITH_OPERATOR:
 			light_material.set_shader_param("colour", Color.orange)
 			light_material.set_shader_param("flash_speed", 0.0)
+			if cable: cable.talking_state = Cable.TalkingState.TALKING_FLIP_FLOP
 		State.ON_HOLD:
 			light_material.set_shader_param("colour", Color.orange)
 			light_material.set_shader_param("flash_speed", 10.0)
+			if cable: cable.talking_state = Cable.TalkingState.NONE
 		State.CONNECTED:
 			light_material.set_shader_param("colour", Color.green)
 			light_material.set_shader_param("flash_speed", 0.0)
+			if cable: cable.talking_state = Cable.TalkingState.TALKING_FLIP_FLOP
 		State.ERROR:
 			light_material.set_shader_param("colour", Color.red)
 			light_material.set_shader_param("flash_speed", 20.0)
+			if cable: cable.talking_state = Cable.TalkingState.NONE

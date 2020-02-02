@@ -1,10 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/prefabs/Plug.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Cable.gd" type="Script" id=2]
+[ext_resource path="res://materials/Cable.tres" type="Material" id=3]
+[ext_resource path="res://textures/particles/spark_02.png" type="Texture" id=4]
+[ext_resource path="res://particles/ElectricCableSparks.tres" type="Material" id=5]
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+flags_unshaded = true
+flags_vertex_lighting = true
+flags_world_triplanar = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 8 )
+size = Vector2( 0.25, 0.25 )
+
+[sub_resource type="QuadMesh" id=9]
+material = SubResource( 8 )
+size = Vector2( 0.25, 0.25 )
 
 [node name="FloppyCable" type="FloppyCable"]
 cable_num_segments = 16
+cable_material = ExtResource( 3 )
 script = ExtResource( 2 )
 first_plug_name = NodePath("Plug")
 second_plug_name = NodePath("Plug2")
@@ -14,3 +39,17 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 
 [node name="Plug2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.000282824, -0.5, -0.00320163 )
+
+[node name="TalkyBall" type="Particles" parent="."]
+amount = 25
+lifetime = 0.2
+local_coords = false
+process_material = ExtResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="TalkyBall2" type="Particles" parent="."]
+amount = 25
+lifetime = 0.2
+local_coords = false
+process_material = ExtResource( 5 )
+draw_pass_1 = SubResource( 9 )

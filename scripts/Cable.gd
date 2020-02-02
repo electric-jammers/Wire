@@ -1,6 +1,14 @@
 extends FloppyCable
 class_name Cable
 
+enum TalkingState { NONE, TALKING_DOWN, TALKING_UP, TALKING_FLIP_FLOP }
+
+# State
+var talking_fx_speed := 1.5
+var _talking_fx_distance := 0.0
+var _talking_fx_flop := false
+var talking_state = TalkingState.NONE
+
 # References
 var _first_plug: Plug
 var _second_plug: Plug
@@ -20,6 +28,19 @@ func _ready():
 	if first_plug_name and second_plug_name:
 		_bind(get_node(first_plug_name), get_node(second_plug_name))
 
+func rotate_plug_based_on_cable(delta: float, plug: Plug):
+	var pos1 := get_position_on_cable(0.1)
+	var pos2 := get_position_on_cable(0.01)
+	if pos1 != pos2:
+		var dir = (pos2 - pos1).normalized()
+		if dir != Vector3.UP:
+			var right = dir.cross(Vector3.UP).normalized()
+			var forward = dir.normalized()
+			var up = right.cross(forward).normalized()
+			var oldBasis = plug.global_transform.basis.orthonormalized()
+			var newBasis = Basis(-right, up, forward).orthonormalized()
+			plug.global_transform.basis = Basis(oldBasis.get_rotation_quat().slerp(newBasis.get_rotation_quat(), clamp(delta*10.0, 0, 1)))
+
 func _process(delta: float):
 	if _first_plug.is_attached():
 		set_start_attached(true)
@@ -27,13 +48,50 @@ func _process(delta: float):
 	else:
 		set_start_attached(false)
 		_first_plug.global_transform.origin = to_global(get_start_location())
-
+		rotate_plug_based_on_cable(delta, _first_plug)
+	
 	if _second_plug.is_attached():
 		set_end_attached(true)
 		end_location = _second_plug.translation
 	else:
 		set_end_attached(false)
 		_second_plug.global_transform.origin = to_global(get_end_location())
+		rotate_plug_based_on_cable(delta, _second_plug)
+	
+	_process_talking_fx(delta)
+
+func _process_talking_fx(delta: float):
+	match talking_state:
+		TalkingState.TALKING_DOWN: 
+			_talking_fx_distance += delta * talking_fx_speed
+			if _talking_fx_distance > 1.0:
+				_talking_fx_distance -= 1.0
+				
+		TalkingState.TALKING_UP:
+			_talking_fx_distance -= delta * talking_fx_speed
+			if _talking_fx_distance < 0.0:
+				_talking_fx_distance += 1.0
+			
+		TalkingState.TALKING_FLIP_FLOP:
+			if _talking_fx_flop:
+				_talking_fx_distance -= delta * talking_fx_speed
+				if _talking_fx_distance < 0.0:
+					_talking_fx_flop = false
+			else:
+				_talking_fx_distance += delta * talking_fx_speed
+				if _talking_fx_distance > 1.0:
+					_talking_fx_flop = true
+					
+		_ : pass
+			
+
+	$TalkyBall.translation = to_local(get_position_on_cable(_talking_fx_distance))
+	$TalkyBall.visible = talking_state != TalkingState.NONE
+	
+	var second_distance = _talking_fx_distance - 0.4
+	if second_distance < 0.0: second_distance += 1.0
+	$TalkyBall2.translation = to_local(get_position_on_cable(second_distance))
+	$TalkyBall2.visible = talking_state != TalkingState.NONE
 
 func _bind(first_plug: Plug, second_plug: Plug):
 	_first_plug = first_plug

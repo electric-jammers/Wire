@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Socket.gd" type="Script" id=1]
 [ext_resource path="res://meshes/module.fbx" type="PackedScene" id=2]
+[ext_resource path="res://sounds/unplug.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/plug_in.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.0302201, 0.0455184, 0.0464734 )
@@ -17,3 +19,11 @@ shape = SubResource( 1 )
 
 [node name="module" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0483245 )
+
+[node name="Sounds" type="Spatial" parent="."]
+
+[node name="PluggedIn" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="Unplugged" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource( 3 )
